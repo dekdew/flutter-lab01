@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './ui/first_screen.dart';
+import './ui/second_screen.dart';
+import './ui/my_custom_form.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +15,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: MyHomePage(),
+      // home: (),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MyCustomForm(),
+        '/second': (context) => SecondScreen(),
+      },
     );
   }
 }
@@ -114,56 +122,57 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return MyHomePageState();
-  }
-}
+// class MyHomePage extends StatefulWidget {
+//   @override
+//   State<StatefulWidget> createState() {
+//     return MyHomePageState();
+//   }
+// }
 
-class MyHomePageState extends State<MyHomePage> {
-  int counter = 0;
+// class MyHomePageState extends State<MyHomePage> {
+//   int counter = 0;
 
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Tabbar"),
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(Icons.book),
-                text: "book",
-              ),
-              Tab(
-                icon: Icon(Icons.search),
-                text: "search",
-              ),
-              Tab(
-                icon: Icon(Icons.settings),
-                text: "settings",
-              )
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            Center(child: Text("$counter")),
-            Icon(Icons.search),
-            Icon(Icons.settings)
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            setState(() {
-              counter++;
-            });
-          },
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return DefaultTabController(
+//       length: 3,
+//       child: Scaffold(
+//         appBar: AppBar(
+//           title: Text("Tabbar"),
+//           bottom: TabBar(
+//             tabs: <Widget>[
+//               Tab(
+//                 icon: Icon(Icons.book),
+//                 text: "book",
+//               ),
+//               Tab(
+//                 icon: Icon(Icons.search),
+//                 text: "search",
+//               ),
+//               Tab(
+//                 icon: Icon(Icons.settings),
+//                 text: "settings",
+//               )
+//             ],
+//           ),
+//         ),
+//         body: TabBarView(
+//           children: <Widget>[
+//             Center(child: Text("$counter")),
+//             Icon(Icons.search),
+//             Icon(Icons.settings)
+//           ],
+//         ),
+//         floatingActionButton: FloatingActionButton(
+//           child: Icon(Icons.add),
+//           onPressed: () {
+//             setState(() {
+//               counter++;
+//             });
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
